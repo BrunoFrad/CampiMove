@@ -8,11 +8,13 @@ import Link from "next/link";
 import { useState } from 'react';
 import { Header } from '@/components/landing/header';
 import { Footer } from '@/components/landing/footer';
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [role, setRole] = useState('student');
   const [error, setError] = useState('');
 
   const handleRegister = (e: React.FormEvent) => {
@@ -22,13 +24,13 @@ export default function RegisterPage() {
       return;
     }
     setError('This is a static implementation. Registration logic needs to be added.');
-    console.log('Register attempt with:', { email, password });
+    console.log('Register attempt with:', { email, password, role });
   };
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-grow flex items-center justify-center">
+      <main className="flex-grow flex items-center justify-center py-12">
         <Card className="w-full max-w-md">
           <CardHeader>
             <CardTitle>Register</CardTitle>
@@ -67,6 +69,47 @@ export default function RegisterPage() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
+                </div>
+                <div className="grid gap-2">
+                  <Label>I am a</Label>
+                  <RadioGroup
+                    defaultValue="student"
+                    className="grid grid-cols-3 gap-4"
+                    value={role}
+                    onValueChange={setRole}
+                  >
+                    <div>
+                      <RadioGroupItem value="student" id="student" className="peer sr-only" />
+                      <Label
+                        htmlFor="student"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Student
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem
+                        value="teacher"
+                        id="teacher"
+                        className="peer sr-only"
+                      />
+                      <Label
+                        htmlFor="teacher"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Teacher
+                      </Label>
+                    </div>
+                    <div>
+                      <RadioGroupItem value="driver" id="driver" className="peer sr-only" />
+                      <Label
+                        htmlFor="driver"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        Driver
+                      </Label>
+                    </div>
+                  </RadioGroup>
                 </div>
                 {error && <p className="text-sm font-medium text-destructive">{error}</p>}
                 <Button type="submit" className="w-full">
