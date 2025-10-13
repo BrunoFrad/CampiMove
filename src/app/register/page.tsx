@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { Header } from '@/components/landing/header';
 import { Footer } from '@/components/landing/footer';
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -16,6 +17,7 @@ export default function RegisterPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState('student');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,8 +25,10 @@ export default function RegisterPage() {
       setError('Passwords do not match');
       return;
     }
-    setError('This is a static implementation. Registration logic needs to be added.');
+    setError('');
     console.log('Register attempt with:', { email, password, role });
+    // This is a static implementation. Registration logic needs to be added.
+    router.push('/verify-code');
   };
 
   return (
