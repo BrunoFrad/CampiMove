@@ -1,29 +1,29 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Bike, Car, Bus, ShieldCheck } from 'lucide-react';
+import { Bus, Users, ShieldCheck, Search } from 'lucide-react';
 
 const features = [
   {
-    icon: <Bike className="h-10 w-10 text-primary" />,
-    title: 'Shared E-Bikes',
-    description: 'Grab an e-bike from dozens of stations across campus. Perfect for short trips between classes.',
-    price: '$1 / 15 min'
+    icon: <Bus className="h-10 w-10 text-primary" />,
+    title: 'Never lose the next bus',
+    description: 'Track the inter-campus bus in real-time and plan your trips with precision. Know exactly when to leave, so you never have to rush or wait.',
+    price: 'Free for students'
   },
   {
-    icon: <Car className="h-10 w-10 text-primary" />,
-    title: 'Ride Sharing',
-    description: 'Carpool with fellow students. Save money, reduce traffic, and make new friends.',
+    icon: <Users className="h-10 w-10 text-primary" />,
+    title: 'Find your new ride',
+    description: 'Connect with a large community of partners offering various transportation options. From carpooling to bike rentals, find the perfect ride for your needs.',
     price: 'From $2 / ride'
   },
   {
-    icon: <Bus className="h-10 w-10 text-primary" />,
-    title: 'Campus Shuttle Tracker',
-    description: 'Real-time tracking for all campus shuttles. Never miss your ride again.',
-    price: 'Free for students'
+    icon: <Search className="h-10 w-10 text-primary" />,
+    title: 'Discover new routes',
+    description: 'Explore the most efficient and scenic routes to get around campus. Our smart routing helps you find the best way to your destination.',
+    price: 'Free feature'
   },
   {
     icon: <ShieldCheck className="h-10 w-10 text-primary" />,
     title: 'Safe & Secure',
-    description: 'All services are integrated with your student ID for safety and easy access.',
+    description: 'All services are integrated with your student ID for safety and easy access. Travel with peace of mind knowing all partners are verified.',
     price: 'Included'
   }
 ];
