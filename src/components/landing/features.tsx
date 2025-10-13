@@ -6,25 +6,21 @@ const features = [
     icon: <Bus className="h-10 w-10 text-primary" />,
     title: 'Never lose the next bus',
     description: 'Track the inter-campus bus in real-time and plan your trips with precision. Know exactly when to leave, so you never have to rush or wait.',
-    price: 'Free for students'
   },
   {
     icon: <Users className="h-10 w-10 text-primary" />,
     title: 'Find your new ride',
     description: 'Connect with a large community of partners offering various transportation options. From carpooling to bike rentals, find the perfect ride for your needs.',
-    price: 'From $2 / ride'
   },
   {
     icon: <Search className="h-10 w-10 text-primary" />,
     title: 'Discover new routes',
     description: 'Explore the most efficient and scenic routes to get around campus. Our smart routing helps you find the best way to your destination.',
-    price: 'Free feature'
   },
   {
     icon: <ShieldCheck className="h-10 w-10 text-primary" />,
     title: 'Safe & Secure',
     description: 'All services are integrated with your student ID for safety and easy access. Travel with peace of mind knowing all partners are verified.',
-    price: 'Included'
   }
 ];
 
@@ -50,9 +46,6 @@ export function Features() {
               </CardHeader>
               <CardContent className="flex-grow flex flex-col text-center p-6 pt-0">
                 <CardDescription className="flex-grow">{feature.description}</CardDescription>
-                <div className="mt-6">
-                  <span className="text-2xl font-bold text-primary">{feature.price}</span>
-                </div>
               </CardContent>
             </Card>
           ))}
