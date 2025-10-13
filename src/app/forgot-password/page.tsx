@@ -4,20 +4,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import { useState } from 'react';
 import { Header } from '@/components/landing/header';
 import { Footer } from '@/components/landing/footer';
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-export default function LoginPage() {
+export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleForgotPassword = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('This is a static implementation. Authentication logic needs to be added.');
-    console.log('Login attempt with:', { email, password });
+    setError('');
+    console.log('Forgot password attempt for:', email);
+    // This is a static implementation. Password reset logic needs to be added.
+    router.push('/verify-code');
   };
 
   return (
@@ -26,11 +29,11 @@ export default function LoginPage() {
       <main className="flex-grow flex items-center justify-center">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Login</CardTitle>
-            <CardDescription>Enter your credentials to access your account.</CardDescription>
+            <CardTitle>Forgot Password</CardTitle>
+            <CardDescription>Enter your email to receive a verification code.</CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleForgotPassword}>
               <div className="grid gap-4">
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
@@ -43,33 +46,15 @@ export default function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Password</Label>
-                    <Link
-                      href="/forgot-password"
-                      className="ml-auto inline-block text-sm underline"
-                    >
-                      Forgot your password?
-                    </Link>
-                  </div>
-                  <Input
-                    id="password"
-                    type="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
                 {error && <p className="text-sm font-medium text-destructive">{error}</p>}
                 <Button type="submit" className="w-full">
-                  Login
+                  Send Verification Code
                 </Button>
               </div>
-              <div className="mt-4 text-center text-sm">
-                Don&apos;t have an account?{' '}
-                <Link href="/register" className="underline">
-                  Sign up
+               <div className="mt-4 text-center text-sm">
+                Remember your password?{' '}
+                <Link href="/login" className="underline">
+                  Login
                 </Link>
               </div>
             </form>
