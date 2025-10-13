@@ -50,8 +50,8 @@ export function DashboardHeader() {
                                 </div>
                             </DropdownMenuLabel>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem>
-                                Edit Profile
+                            <DropdownMenuItem asChild>
+                                <Link href="/edit-profile">Edit Profile</Link>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem onClick={handleLogout}>
