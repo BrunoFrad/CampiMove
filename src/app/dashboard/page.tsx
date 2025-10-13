@@ -1,5 +1,5 @@
 
-import { Header } from '@/components/landing/header';
+import { DashboardHeader } from '@/components/dashboard/header';
 import { Footer } from '@/components/landing/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +8,7 @@ import { Bus, CalendarPlus } from 'lucide-react';
 export default function DashboardPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <Header />
+      <DashboardHeader />
       <main className="flex-grow container mx-auto px-4 md:px-6 py-8">
         <h1 className="text-3xl font-bold mb-8">Welcome to your Dashboard</h1>
         <div className="grid gap-8 md:grid-cols-2">
