@@ -91,7 +91,6 @@ export default function DashboardPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <DashboardHeader />
       <main className="flex-grow container mx-auto px-4 md:px-6 py-8">
-        <h1 className="text-3xl font-bold mb-8">Welcome to your Dashboard</h1>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
