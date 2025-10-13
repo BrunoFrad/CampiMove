@@ -15,24 +15,24 @@ import { useToast } from '@/hooks/use-toast';
 export default function EditProfilePage() {
   const { toast } = useToast();
   const image = PlaceHolderImages.find(p => p.id === 'testimonial-1');
-  const [name, setName] = useState('User');
-  const [email, setEmail] = useState('user@example.com');
+  const [name, setName] = useState('Usuário');
+  const [email, setEmail] = useState('usuario@exemplo.com');
 
   const handleSaveChanges = (e: React.FormEvent) => {
     e.preventDefault();
-    // This is a static implementation. Profile update logic needs to be added.
-    console.log('Saving changes:', { name, email });
+    // Esta é uma implementação estática. A lógica de atualização de perfil precisa ser adicionada.
+    console.log('Salvando alterações:', { name, email });
     toast({
-      title: 'Profile Updated',
-      description: 'Your changes have been saved successfully.',
+      title: 'Perfil Atualizado',
+      description: 'Suas alterações foram salvas com sucesso.',
     });
   };
 
   const handleAvatarChange = () => {
-    // This is a static implementation. File upload logic needs to be added.
+    // Esta é uma implementação estática. A lógica de upload de arquivo precisa ser adicionada.
     toast({
-      title: 'Feature not available',
-      description: 'Avatar uploading is not yet implemented.',
+      title: 'Recurso não disponível',
+      description: 'O upload de avatar ainda não foi implementado.',
       variant: 'destructive'
     });
   }
@@ -44,8 +44,8 @@ export default function EditProfilePage() {
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Edit Profile</CardTitle>
-              <CardDescription>Update your account information.</CardDescription>
+              <CardTitle>Editar Perfil</CardTitle>
+              <CardDescription>Atualize as informações da sua conta.</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSaveChanges}>
@@ -64,7 +64,7 @@ export default function EditProfilePage() {
                           onClick={handleAvatarChange}
                         >
                           <Camera className="h-4 w-4" />
-                          <span className="sr-only">Change avatar</span>
+                          <span className="sr-only">Alterar avatar</span>
                         </Button>
                       </div>
                     <div className="grid gap-1.5">
@@ -74,7 +74,7 @@ export default function EditProfilePage() {
                   </div>
 
                   <div className="grid gap-2">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">Nome</Label>
                     <Input
                       id="name"
                       value={name}
@@ -93,7 +93,7 @@ export default function EditProfilePage() {
                     />
                   </div>
                   <div className="flex justify-end">
-                    <Button type="submit">Save Changes</Button>
+                    <Button type="submit">Salvar Alterações</Button>
                   </div>
                 </div>
               </form>

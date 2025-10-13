@@ -1,74 +1,74 @@
 # CampiMove
 
-CampiMove is a campus mobility application designed to improve transportation for students, teachers, and staff at CEFET. The platform offers a variety of services to make navigating the campus faster, safer, and more convenient.
+CampiMove é um aplicativo de mobilidade no campus projetado para melhorar o transporte para estudantes, professores e funcionários do CEFET. A plataforma oferece uma variedade de serviços para tornar a navegação pelo campus mais rápida, segura e conveniente.
 
-## About the Project
+## Sobre o Projeto
 
-Built with Next.js, React, ShadCN UI, and Tailwind CSS, CampiMove provides a modern and responsive user experience. Key features include:
+Construído com Next.js, React, ShadCN UI e Tailwind CSS, o CampiMove oferece uma experiência de usuário moderna e responsiva. As principais características incluem:
 
-- **Intercampus Bus Tracking**: Real-time location of the campus shuttle.
-- **Ride Sharing**: A marketplace for carpools, bikes, and scooters offered by fellow users.
-- **Route Discovery**: Find the best routes to get around campus.
-- **User Roles**: Differentiated experiences for students, teachers, and motorists.
-- **Rating System**: Rate and review rides to maintain a high-quality community.
-- **Secure and Integrated**: Designed for safe use within the campus community.
+- **Rastreamento de Ônibus Intercampus**: Localização em tempo real do ônibus do campus.
+- **Compartilhamento de Caronas**: Um mercado para caronas, bicicletas e patinetes oferecidos por outros usuários.
+- **Descoberta de Rotas**: Encontre as melhores rotas para se locomover pelo campus.
+- **Papéis de Usuário**: Experiências diferenciadas para estudantes, professores e motoristas.
+- **Sistema de Avaliação**: Avalie e comente sobre as caronas para manter uma comunidade de alta qualidade.
+- **Seguro e Integrado**: Projetado para uso seguro dentro da comunidade do campus.
 
-## Getting Started
+## Começando
 
-Follow these steps to get the project running on your local machine for development and testing purposes.
+Siga estes passos para colocar o projeto para rodar na sua máquina local para desenvolvimento e testes.
 
-### Prerequisites
+### Pré-requisitos
 
-- Node.js (v18 or newer recommended)
-- npm or a compatible package manager
+- Node.js (v18 ou mais recente recomendado)
+- npm ou um gerenciador de pacotes compatível
 
-### Installation
+### Instalação
 
-1.  **Install dependencies:**
-    Open your terminal in the project's root directory and run the following command to install all the necessary packages:
+1.  **Instale as dependências:**
+    Abra seu terminal no diretório raiz do projeto e execute o seguinte comando para instalar todos os pacotes necessários:
 
     ```bash
     npm install
     ```
 
-2.  **Run the development server:**
-    Once the installation is complete, you can start the development server:
+2.  **Execute o servidor de desenvolvimento:**
+    Quando a instalação estiver completa, você pode iniciar o servidor de desenvolvimento:
 
     ```bash
     npm run dev
     ```
 
-    The application will be available at [http://localhost:9002](http://localhost:9002).
+    O aplicativo estará disponível em [http://localhost:9002](http://localhost:9002).
 
-## Directory Structure
+## Estrutura de Diretórios
 
-The project follows a structure that separates concerns and makes it easy to locate files. Here is an overview of the main directories:
+O projeto segue uma estrutura que separa as responsabilidades e facilita a localização de arquivos. Aqui está uma visão geral dos principais diretórios:
 
 ```
 .
 ├── src
-│   ├── app/                # Application pages (Next.js App Router)
-│   │   ├── dashboard/      # User and motorist dashboard pages
-│   │   ├── (auth)/         # Authentication-related pages (login, register, etc.)
-│   │   └── page.tsx        # Landing page
+│   ├── app/                # Páginas da aplicação (Next.js App Router)
+│   │   ├── dashboard/      # Páginas do painel do usuário e motorista
+│   │   ├── (auth)/         # Páginas relacionadas à autenticação (login, registro, etc.)
+│   │   └── page.tsx        # Página inicial
 │   │
-│   ├── components/         # Reusable React components
-│   │   ├── landing/        # Components specific to the landing page
-│   │   ├── dashboard/      # Components used across dashboard pages
-│   │   └── ui/             # Core UI components from ShadCN
+│   ├── components/         # Componentes React reutilizáveis
+│   │   ├── landing/        # Componentes específicos da página inicial
+│   │   ├── dashboard/      # Componentes usados nas páginas do painel
+│   │   └── ui/             # Componentes de UI principais do ShadCN
 │   │
-│   ├── lib/                # Utility functions and shared libraries
+│   ├── lib/                # Funções utilitárias e bibliotecas compartilhadas
 │   │
-│   └── hooks/              # Custom React hooks
+│   └── hooks/              # Hooks React personalizados
 │
-├── public/                 # Static assets (images, fonts, etc.)
+├── public/                 # Arquivos estáticos (imagens, fontes, etc.)
 │
-└── tailwind.config.ts      # Tailwind CSS configuration
+└── tailwind.config.ts      # Configuração do Tailwind CSS
 ```
 
--   **`src/app/`**: Contains all the application's routes and pages, following the Next.js App Router paradigm. Each folder represents a URL segment.
--   **`src/components/`**: Home to all reusable components. They are further organized into `landing`, `dashboard`, and `ui` for clarity.
--   **`src/lib/`**: Includes helper functions, utility classes (`cn` for class names), and placeholder data.
--   **`src/hooks/`**: Stores custom React hooks, such as `useToast` for displaying notifications.
--   **`public/`**: For static files that don't need to be processed by the build system.
--   **`tailwind.config.ts`**: The configuration file for Tailwind CSS, where you can customize the design system.
+-   **`src/app/`**: Contém todas as rotas e páginas da aplicação, seguindo o paradigma do Next.js App Router. Cada pasta representa um segmento de URL.
+-   **`src/components/`**: Abriga todos os componentes reutilizáveis. Eles são organizados em `landing`, `dashboard` e `ui` para clareza.
+-   **`src/lib/`**: Inclui funções auxiliares, classes utilitárias (`cn` para nomes de classe) e dados de exemplo.
+-   **`src/hooks/`**: Armazena hooks React personalizados, como `useToast` para exibir notificações.
+-   **`public/`**: Para arquivos estáticos que não precisam ser processados pelo sistema de compilação.
+-   **`tailwind.config.ts`**: O arquivo de configuração para o Tailwind CSS, onde você pode personalizar o sistema de design.

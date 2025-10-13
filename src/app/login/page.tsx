@@ -19,8 +19,8 @@ export default function LoginPage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    console.log('Login attempt with:', { email, password });
-    // This is a static implementation. Authentication logic needs to be added.
+    console.log('Tentativa de login com:', { email, password });
+    // Esta é uma implementação estática. A lógica de autenticação precisa ser adicionada.
     router.push('/dashboard');
   };
 
@@ -30,8 +30,8 @@ export default function LoginPage() {
       <main className="flex-grow flex items-center justify-center">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Login</CardTitle>
-            <CardDescription>Enter your credentials to access your account.</CardDescription>
+            <CardTitle>Entrar</CardTitle>
+            <CardDescription>Insira suas credenciais para acessar sua conta.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin}>
@@ -41,7 +41,7 @@ export default function LoginPage() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="m@exemplo.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -49,12 +49,12 @@ export default function LoginPage() {
                 </div>
                 <div className="grid gap-2">
                   <div className="flex items-center">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">Senha</Label>
                     <Link
                       href="/forgot-password"
                       className="ml-auto inline-block text-sm underline"
                     >
-                      Forgot your password?
+                      Esqueceu sua senha?
                     </Link>
                   </div>
                   <Input
@@ -67,13 +67,13 @@ export default function LoginPage() {
                 </div>
                 {error && <p className="text-sm font-medium text-destructive">{error}</p>}
                 <Button type="submit" className="w-full">
-                  Login
+                  Entrar
                 </Button>
               </div>
               <div className="mt-4 text-center text-sm">
-                Don&apos;t have an account?{' '}
+                Não tem uma conta?{' '}
                 <Link href="/register" className="underline">
-                  Sign up
+                  Cadastre-se
                 </Link>
               </div>
             </form>

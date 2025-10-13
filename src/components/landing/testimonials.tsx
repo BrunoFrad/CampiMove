@@ -4,21 +4,21 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const testimonials = [
   {
-    quote: "CampiMove has completely changed how I get around campus. The e-bikes are a lifesaver for getting to my 8 AM class on time!",
+    quote: "O CampiMove mudou completamente como eu me locomovo no campus. As bicicletas elétricas são uma salvação para chegar a tempo na minha aula das 8h!",
     name: "Ana Silva",
-    title: "Computer Science Student",
+    title: "Estudante de Ciência da Computação",
     imageId: "testimonial-1"
   },
   {
-    quote: "I use the ride-sharing feature every day. It's cheaper than driving alone and I've met some great people from other courses.",
+    quote: "Eu uso o recurso de caronas todos os dias. É mais barato do que dirigir sozinho e conheci pessoas ótimas de outros cursos.",
     name: "Bruno Costa",
-    title: "Engineering Student",
+    title: "Estudante de Engenharia",
     imageId: "testimonial-2"
   },
   {
-    quote: "The shuttle tracker is incredibly accurate. No more guessing when the bus will arrive. A must-have app for every CEFET student.",
+    quote: "O rastreador de ônibus é incrivelmente preciso. Chega de adivinhar quando o ônibus vai chegar. Um aplicativo essencial para todo estudante do CEFET.",
     name: "Carla Dias",
-    title: "Design Student",
+    title: "Estudante de Design",
     imageId: "testimonial-3"
   }
 ];
@@ -31,10 +31,10 @@ export function Testimonials() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">
-            Loved by Students
+            Adorado pelos Alunos
           </h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            See what fellow CEFET students are saying about CampiMove.
+            Veja o que outros estudantes do CEFET estão dizendo sobre o CampiMove.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

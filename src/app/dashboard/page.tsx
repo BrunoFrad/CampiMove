@@ -25,22 +25,22 @@ const initialRecentTravels = [
   {
     id: 'travel-1',
     destination: 'Campus II',
-    driver: 'John Doe',
+    driver: 'João da Silva',
     date: '2024-07-25',
     rated: false,
   },
   {
     id: 'travel-2',
-    destination: 'Downtown Library',
-    driver: 'Jane Smith',
+    destination: 'Biblioteca Central',
+    driver: 'Maria Souza',
     date: '2024-07-24',
     rated: true,
     rating: 5,
   },
   {
     id: 'travel-3',
-    destination: 'Main Campus',
-    driver: 'Sam Wilson',
+    destination: 'Campus Principal',
+    driver: 'Samuel Wilson',
     date: '2024-07-22',
     rated: false,
   },
@@ -57,30 +57,30 @@ export default function DashboardPage() {
 
   const handleRateClick = (travel: Travel) => {
     setSelectedTravel(travel);
-    setRating(0); // Reset rating
+    setRating(0); // Resetar avaliação
     setIsRatingDialogOpen(true);
   };
 
   const handleRatingSubmit = () => {
     if (selectedTravel && rating > 0) {
-      console.log(`Submitting rating ${rating} for travel ${selectedTravel.id}`);
-      // This is a static implementation.
-      // Update the travel item to show it has been rated.
+      console.log(`Enviando avaliação ${rating} para a viagem ${selectedTravel.id}`);
+      // Esta é uma implementação estática.
+      // Atualize o item da viagem para mostrar que foi avaliado.
       setRecentTravels(travels =>
         travels.map(t =>
           t.id === selectedTravel.id ? { ...t, rated: true, rating: rating } : t
         )
       );
       toast({
-        title: 'Thank you for your feedback!',
-        description: `You rated your trip with ${selectedTravel.driver} ${rating} stars.`,
+        title: 'Obrigado pelo seu feedback!',
+        description: `Você avaliou sua viagem com ${selectedTravel.driver} com ${rating} estrelas.`,
       });
       setIsRatingDialogOpen(false);
       setSelectedTravel(null);
     } else {
        toast({
-        title: 'Invalid rating',
-        description: 'Please select a star rating before submitting.',
+        title: 'Avaliação inválida',
+        description: 'Por favor, selecione uma avaliação de estrelas antes de enviar.',
         variant: 'destructive',
       });
     }
@@ -94,24 +94,24 @@ export default function DashboardPage() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-medium">Next Intercampus Bus</CardTitle>
+              <CardTitle className="text-lg font-medium">Próximo Ônibus Intercampus</CardTitle>
               <Bus className="h-6 w-6 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-bold">12:45 PM</div>
-              <p className="text-xs text-muted-foreground">Arriving at Main Campus Stop</p>
+              <div className="text-4xl font-bold">12:45</div>
+              <p className="text-xs text-muted-foreground">Chegando na parada do Campus Principal</p>
             </CardContent>
           </Card>
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-medium">Reserve a Transport</CardTitle>
+              <CardTitle className="text-lg font-medium">Reservar um Transporte</CardTitle>
               <CalendarPlus className="h-6 w-6 text-primary" />
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-4">Need a ride? Find carpools, bikes, and more.</p>
+              <p className="text-muted-foreground mb-4">Precisa de uma carona? Encontre caronas, bicicletas e mais.</p>
               <Button className="w-full" asChild>
                 <Link href="/find-a-ride">
-                  Find a Ride
+                  Encontrar Carona
                 </Link>
               </Button>
             </CardContent>
@@ -120,15 +120,15 @@ export default function DashboardPage() {
            <Dialog open={isRatingDialogOpen} onOpenChange={setIsRatingDialogOpen}>
             <Card className="hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1 lg:row-start-2">
                 <CardHeader>
-                    <CardTitle>Recent Travels</CardTitle>
-                    <CardDescription>View and rate your past trips.</CardDescription>
+                    <CardTitle>Viagens Recentes</CardTitle>
+                    <CardDescription>Veja e avalie suas viagens passadas.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {recentTravels.map((travel) => (
                     <div key={travel.id} className="flex items-center justify-between p-2 rounded-lg hover:bg-accent">
                         <div>
                         <p className="font-semibold">{travel.destination}</p>
-                        <p className="text-sm text-muted-foreground">with {travel.driver} on {travel.date}</p>
+                        <p className="text-sm text-muted-foreground">com {travel.driver} em {travel.date}</p>
                         </div>
                         {travel.rated ? (
                           <div className="flex items-center gap-1 text-yellow-500">
@@ -138,7 +138,7 @@ export default function DashboardPage() {
                           </div>
                         ) : (
                            <DialogTrigger asChild>
-                            <Button variant="outline" size="sm" onClick={() => handleRateClick(travel)}>Rate Trip</Button>
+                            <Button variant="outline" size="sm" onClick={() => handleRateClick(travel)}>Avaliar Viagem</Button>
                            </DialogTrigger>
                         )}
                     </div>
@@ -148,9 +148,9 @@ export default function DashboardPage() {
             {selectedTravel && (
                <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Rate your trip to {selectedTravel.destination}</DialogTitle>
+                  <DialogTitle>Avalie sua viagem para {selectedTravel.destination}</DialogTitle>
                   <DialogDescription>
-                    How was your experience with {selectedTravel.driver} on {selectedTravel.date}?
+                    Como foi sua experiência com {selectedTravel.driver} em {selectedTravel.date}?
                   </DialogDescription>
                 </DialogHeader>
                 <div className="flex justify-center items-center gap-2 py-4">
@@ -168,9 +168,9 @@ export default function DashboardPage() {
                 </div>
                 <DialogFooter>
                   <DialogClose asChild>
-                    <Button variant="outline">Cancel</Button>
+                    <Button variant="outline">Cancelar</Button>
                   </DialogClose>
-                  <Button onClick={handleRatingSubmit}>Submit Rating</Button>
+                  <Button onClick={handleRatingSubmit}>Enviar Avaliação</Button>
                 </DialogFooter>
               </DialogContent>
             )}

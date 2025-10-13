@@ -12,7 +12,7 @@ export function Footer() {
           </Link>
         </div>
         <p className="text-sm text-muted-foreground order-last sm:order-none">
-          &copy; {currentYear} CampiMove. All rights reserved.
+          &copy; {currentYear} CampiMove. Todos os direitos reservados.
         </p>
       </div>
     </footer>

@@ -18,16 +18,16 @@ import { Bell } from 'lucide-react';
 
 const notifications = [
     {
-        title: "Your ride is confirmed!",
-        description: "John Doe will pick you up at 2:00 PM.",
+        title: "Sua carona foi confirmada!",
+        description: "João da Silva irá te buscar às 14:00.",
     },
     {
-        title: "Reminder: Intercampus Bus",
-        description: "The next bus leaves in 15 minutes.",
+        title: "Lembrete: Ônibus Intercampus",
+        description: "O próximo ônibus sai em 15 minutos.",
     },
     {
-        title: "New ride available",
-        description: "A new carpool option matches your route.",
+        title: "Nova carona disponível",
+        description: "Uma nova opção de carona corresponde à sua rota.",
     },
 ];
 
@@ -36,7 +36,7 @@ export function DashboardHeader() {
     const image = PlaceHolderImages.find(p => p.id === 'testimonial-1');
 
     const handleLogout = () => {
-        // This is a static implementation. Authentication logic needs to be added.
+        // Esta é uma implementação estática. A lógica de autenticação precisa ser adicionada.
         router.push('/');
     };
 
@@ -53,11 +53,11 @@ export function DashboardHeader() {
                                 <Button variant="ghost" size="icon" className="relative h-10 w-10 rounded-full">
                                     <Bell className="h-5 w-5" />
                                     <span className="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-primary" />
-                                    <span className="sr-only">Toggle notifications</span>
+                                    <span className="sr-only">Alternar notificações</span>
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-80" align="end">
-                                <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+                                <DropdownMenuLabel>Notificações</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 {notifications.length > 0 ? (
                                     notifications.map((notification, index) => (
@@ -67,7 +67,7 @@ export function DashboardHeader() {
                                         </DropdownMenuItem>
                                     ))
                                 ) : (
-                                    <DropdownMenuItem>No new notifications</DropdownMenuItem>
+                                    <DropdownMenuItem>Nenhuma nova notificação</DropdownMenuItem>
                                 )}
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -84,19 +84,19 @@ export function DashboardHeader() {
                             <DropdownMenuContent className="w-56" align="end" forceMount>
                                 <DropdownMenuLabel className="font-normal">
                                     <div className="flex flex-col space-y-1">
-                                        <p className="text-sm font-medium leading-none">User</p>
+                                        <p className="text-sm font-medium leading-none">Usuário</p>
                                         <p className="text-xs leading-none text-muted-foreground">
-                                            user@example.com
+                                            usuario@exemplo.com
                                         </p>
                                     </div>
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem asChild>
-                                    <Link href="/edit-profile">Edit Profile</Link>
+                                    <Link href="/edit-profile">Editar Perfil</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem onClick={handleLogout}>
-                                    Log out
+                                    Sair
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>

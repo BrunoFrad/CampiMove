@@ -22,12 +22,12 @@ export default function RegisterPage() {
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError('As senhas não coincidem');
       return;
     }
     setError('');
-    console.log('Register attempt with:', { email, password, role });
-    // This is a static implementation. Registration logic needs to be added.
+    console.log('Tentativa de registro com:', { email, password, role });
+    // Esta é uma implementação estática. A lógica de registro precisa ser adicionada.
     router.push('/verify-code');
   };
 
@@ -37,8 +37,8 @@ export default function RegisterPage() {
       <main className="flex-grow flex items-center justify-center py-12">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Register</CardTitle>
-            <CardDescription>Create an account to get started.</CardDescription>
+            <CardTitle>Registrar</CardTitle>
+            <CardDescription>Crie uma conta para começar.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleRegister}>
@@ -48,14 +48,14 @@ export default function RegisterPage() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="m@exemplo.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Senha</Label>
                   <Input
                     id="password"
                     type="password"
@@ -65,7 +65,7 @@ export default function RegisterPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="confirm-password">Confirm Password</Label>
+                  <Label htmlFor="confirm-password">Confirme a Senha</Label>
                   <Input
                     id="confirm-password"
                     type="password"
@@ -75,7 +75,7 @@ export default function RegisterPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label>I am a</Label>
+                  <Label>Eu sou</Label>
                   <RadioGroup
                     defaultValue="student"
                     className="grid grid-cols-3 gap-4"
@@ -88,7 +88,7 @@ export default function RegisterPage() {
                         htmlFor="student"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
-                        Student
+                        Estudante
                       </Label>
                     </div>
                     <div>
@@ -101,7 +101,7 @@ export default function RegisterPage() {
                         htmlFor="teacher"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
-                        Teacher
+                        Professor
                       </Label>
                     </div>
                     <div>
@@ -110,20 +110,20 @@ export default function RegisterPage() {
                         htmlFor="driver"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
-                        Driver
+                        Motorista
                       </Label>
                     </div>
                   </RadioGroup>
                 </div>
                 {error && <p className="text-sm font-medium text-destructive">{error}</p>}
                 <Button type="submit" className="w-full">
-                  Create an account
+                  Criar uma conta
                 </Button>
               </div>
               <div className="mt-4 text-center text-sm">
-                Already have an account?{' '}
+                Já tem uma conta?{' '}
                 <Link href="/login" className="underline">
-                  Login
+                  Entrar
                 </Link>
               </div>
             </form>

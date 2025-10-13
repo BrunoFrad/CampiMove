@@ -21,11 +21,11 @@ export default function RegisterTransportPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Static implementation
+    // Implementação estática
     console.log({ transportType, model, licensePlate });
     toast({
-      title: 'Transport Registered',
-      description: 'Your vehicle has been successfully registered.',
+      title: 'Transporte Cadastrado',
+      description: 'Seu veículo foi cadastrado com sucesso.',
     });
     router.push('/dashboard/motorist');
   };
@@ -37,47 +37,47 @@ export default function RegisterTransportPage() {
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Register a New Transport</CardTitle>
-              <CardDescription>Add the details of your vehicle to start offering rides.</CardDescription>
+              <CardTitle>Cadastrar um Novo Transporte</CardTitle>
+              <CardDescription>Adicione os detalhes do seu veículo para começar a oferecer caronas.</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit}>
                 <div className="grid gap-6">
                   <div className="grid gap-2">
-                    <Label htmlFor="transport-type">Transport Type</Label>
+                    <Label htmlFor="transport-type">Tipo de Transporte</Label>
                     <Select value={transportType} onValueChange={setTransportType}>
                       <SelectTrigger id="transport-type">
-                        <SelectValue placeholder="Select a type" />
+                        <SelectValue placeholder="Selecione um tipo" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="carpool">Carpool</SelectItem>
-                        <SelectItem value="bike">Bike</SelectItem>
-                        <SelectItem value="scooter">Scooter</SelectItem>
+                        <SelectItem value="carpool">Carona</SelectItem>
+                        <SelectItem value="bike">Bicicleta</SelectItem>
+                        <SelectItem value="scooter">Patinete</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="model">Vehicle Model</Label>
+                    <Label htmlFor="model">Modelo do Veículo</Label>
                     <Input
                       id="model"
                       value={model}
                       onChange={(e) => setModel(e.target.value)}
-                      placeholder="e.g., Toyota Corolla"
+                      placeholder="ex: Toyota Corolla"
                       required
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="license-plate">License Plate</Label>
+                    <Label htmlFor="license-plate">Placa</Label>
                     <Input
                       id="license-plate"
                       value={licensePlate}
                       onChange={(e) => setLicensePlate(e.target.value)}
-                      placeholder="e.g., ABC-1234"
+                      placeholder="ex: ABC-1234"
                       required
                     />
                   </div>
                   <div className="flex justify-end">
-                    <Button type="submit">Register Transport</Button>
+                    <Button type="submit">Cadastrar Transporte</Button>
                   </div>
                 </div>
               </form>

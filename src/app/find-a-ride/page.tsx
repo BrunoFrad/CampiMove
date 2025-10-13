@@ -16,7 +16,7 @@ import Link from 'next/link';
 const transportOptions = [
   {
     id: 'ride-1',
-    motorist: 'John Doe',
+    motorist: 'João da Silva',
     transportType: 'Carpool',
     rating: 4.5,
     price: 15,
@@ -24,7 +24,7 @@ const transportOptions = [
   },
   {
     id: 'ride-2',
-    motorist: 'Jane Smith',
+    motorist: 'Maria Souza',
     transportType: 'Bike',
     rating: 5,
     price: 5,
@@ -32,7 +32,7 @@ const transportOptions = [
   },
   {
     id: 'ride-3',
-    motorist: 'Sam Wilson',
+    motorist: 'Samuel Wilson',
     transportType: 'Scooter',
     rating: 4.0,
     price: 8,
@@ -70,33 +70,33 @@ export default function FindARidePage() {
       <DashboardHeader />
       <main className="flex-grow container mx-auto px-4 md:px-6 py-8">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold">Find a Ride</h1>
-          <p className="text-muted-foreground">Browse available transport options and find your perfect match.</p>
+          <h1 className="text-4xl font-bold">Encontrar Carona</h1>
+          <p className="text-muted-foreground">Navegue pelas opções de transporte disponíveis e encontre a combinação perfeita.</p>
         </header>
 
         <div className="grid md:grid-cols-4 gap-8">
           <aside className="md:col-span-1">
             <Card>
               <CardHeader>
-                <CardTitle>Filters</CardTitle>
+                <CardTitle>Filtros</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-2">
-                  <label htmlFor="transport-type" className="text-sm font-medium">Transport Type</label>
+                  <label htmlFor="transport-type" className="text-sm font-medium">Tipo de Transporte</label>
                   <Select value={transportType} onValueChange={setTransportType}>
                     <SelectTrigger id="transport-type">
-                      <SelectValue placeholder="All types" />
+                      <SelectValue placeholder="Todos os tipos" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All</SelectItem>
-                      <SelectItem value="carpool">Carpool</SelectItem>
-                      <SelectItem value="bike">Bike</SelectItem>
-                      <SelectItem value="scooter">Scooter</SelectItem>
+                      <SelectItem value="all">Todos</SelectItem>
+                      <SelectItem value="carpool">Carona</SelectItem>
+                      <SelectItem value="bike">Bicicleta</SelectItem>
+                      <SelectItem value="scooter">Patinete</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Minimum Rating: {minRating.toFixed(1)} <Star className="inline-block h-4 w-4 mb-1" /></label>
+                  <label className="text-sm font-medium">Avaliação Mínima: {minRating.toFixed(1)} <Star className="inline-block h-4 w-4 mb-1" /></label>
                   <Slider
                     min={0}
                     max={5}
@@ -128,7 +128,7 @@ export default function FindARidePage() {
                             <h3 className="font-semibold text-lg">{option.motorist}</h3>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               {transportIcons[option.transportType]}
-                              <span>{option.transportType}</span>
+                              <span>{option.transportType === 'Carpool' ? 'Carona' : option.transportType === 'Bike' ? 'Bicicleta' : 'Patinete'}</span>
                             </div>
                           </div>
                         </div>
@@ -138,7 +138,7 @@ export default function FindARidePage() {
                             <span className="font-bold">{option.rating.toFixed(1)}</span>
                           </div>
                           <Button size="sm" asChild>
-                            <Link href="#">Book Now</Link>
+                            <Link href="#">Reservar Agora</Link>
                           </Button>
                         </div>
                       </CardContent>
@@ -148,7 +148,7 @@ export default function FindARidePage() {
               ) : (
                 <Card>
                     <CardContent className="p-8 text-center">
-                        <p className="text-muted-foreground">No rides match your criteria. Try adjusting the filters.</p>
+                        <p className="text-muted-foreground">Nenhuma carona corresponde aos seus critérios. Tente ajustar os filtros.</p>
                     </CardContent>
                 </Card>
               )}

@@ -18,8 +18,8 @@ export default function ForgotPasswordPage() {
   const handleForgotPassword = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    console.log('Forgot password attempt for:', email);
-    // This is a static implementation. Password reset logic needs to be added.
+    console.log('Tentativa de redefinição de senha para:', email);
+    // Esta é uma implementação estática. A lógica de redefinição de senha precisa ser adicionada.
     router.push('/verify-code');
   };
 
@@ -29,8 +29,8 @@ export default function ForgotPasswordPage() {
       <main className="flex-grow flex items-center justify-center">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle>Forgot Password</CardTitle>
-            <CardDescription>Enter your email to receive a verification code.</CardDescription>
+            <CardTitle>Esqueceu a Senha</CardTitle>
+            <CardDescription>Digite seu email para receber um código de verificação.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleForgotPassword}>
@@ -40,7 +40,7 @@ export default function ForgotPasswordPage() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="m@exemplo.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -48,13 +48,13 @@ export default function ForgotPasswordPage() {
                 </div>
                 {error && <p className="text-sm font-medium text-destructive">{error}</p>}
                 <Button type="submit" className="w-full">
-                  Send Verification Code
+                  Enviar Código de Verificação
                 </Button>
               </div>
                <div className="mt-4 text-center text-sm">
-                Remember your password?{' '}
+                Lembrou sua senha?{' '}
                 <Link href="/login" className="underline">
-                  Login
+                  Entrar
                 </Link>
               </div>
             </form>
