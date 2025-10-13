@@ -17,6 +17,24 @@
       "description": "Avatar for a student testimonial",
       "imageUrl": "https://picsum.photos/seed/103/100/100",
       "imageHint": "person portrait"
+    },
+    {
+      "id": "motorist-1",
+      "description": "Avatar for a motorist",
+      "imageUrl": "https://picsum.photos/seed/201/100/100",
+      "imageHint": "person"
+    },
+    {
+      "id": "motorist-2",
+      "description": "Avatar for a motorist",
+      "imageUrl": "https://picsum.photos/seed/202/100/100",
+      "imageHint": "person"
+    },
+    {
+      "id": "motorist-3",
+      "description": "Avatar for a motorist",
+      "imageUrl": "https://picsum.photos/seed/203/100/100",
+      "imageHint": "person"
     }
   ]
 }

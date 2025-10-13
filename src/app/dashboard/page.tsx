@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bus, CalendarPlus } from 'lucide-react';
+import Link from 'next/link';
 
 export default function DashboardPage() {
   return (
@@ -29,8 +30,10 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">Need a ride? Find carpools, bikes, and more.</p>
-              <Button className="w-full">
-                Find a Ride
+              <Button className="w-full" asChild>
+                <Link href="/find-a-ride">
+                  Find a Ride
+                </Link>
               </Button>
             </CardContent>
           </Card>

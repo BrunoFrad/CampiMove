@@ -14,14 +14,6 @@ export function Footer() {
         <p className="text-sm text-muted-foreground order-last sm:order-none">
           &copy; {currentYear} CampiMove. All rights reserved.
         </p>
-        <div className="flex gap-4 flex-1 justify-center sm:justify-end">
-          <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Terms
-          </Link>
-          <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Privacy
-          </Link>
-        </div>
       </div>
     </footer>
   );
