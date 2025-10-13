@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 
 export function Header() {
@@ -10,14 +9,6 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo />
           </Link>
-          <div className="flex items-center gap-2">
-             <Button variant="ghost" asChild>
-                <Link href="/login">Entrar</Link>
-            </Button>
-            <Button asChild>
-                <Link href="/register">Experimente agora</Link>
-            </Button>
-          </div>
         </nav>
       </div>
     </header>
