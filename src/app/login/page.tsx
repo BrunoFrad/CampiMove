@@ -8,16 +8,20 @@ import Link from "next/link";
 import { useState } from 'react';
 import { Header } from '@/components/landing/header';
 import { Footer } from '@/components/landing/footer';
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('This is a static implementation. Authentication logic needs to be added.');
+    setError('');
     console.log('Login attempt with:', { email, password });
+    // This is a static implementation. Authentication logic needs to be added.
+    router.push('/dashboard');
   };
 
   return (
