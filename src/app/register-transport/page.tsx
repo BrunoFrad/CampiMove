@@ -17,12 +17,12 @@ export default function RegisterTransportPage() {
   const router = useRouter();
   const [transportType, setTransportType] = useState('');
   const [model, setModel] = useState('');
-  const [licensePlate, setLicensePlate] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Implementação estática
-    console.log({ transportType, model, licensePlate });
+    console.log({ transportType, model, phoneNumber });
     toast({
       title: 'Transporte Cadastrado',
       description: 'Seu veículo foi cadastrado com sucesso.',
@@ -67,12 +67,13 @@ export default function RegisterTransportPage() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="license-plate">Placa</Label>
+                    <Label htmlFor="phone-number">Telefone de Contato</Label>
                     <Input
-                      id="license-plate"
-                      value={licensePlate}
-                      onChange={(e) => setLicensePlate(e.target.value)}
-                      placeholder="ex: ABC-1234"
+                      id="phone-number"
+                      type="tel"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      placeholder="ex: (XX) XXXXX-XXXX"
                       required
                     />
                   </div>
