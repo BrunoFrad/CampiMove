@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { Trash2, UserX, PlusCircle } from 'lucide-react';
+import { Trash2, UserX, PlusCircle, ShieldX, CheckCircle } from 'lucide-react';
 
 const initialSchedules = [
   { id: 'sch-1', route: 'Campus I -> Campus II', time: '12:30' },
@@ -35,10 +35,16 @@ const initialUsers = [
   { id: 'user-3', name: 'Pedro Santos', email: 'pedro.santos@exemplo.com' },
 ];
 
+const initialReports = [
+    { id: 'rep-1', reportedMotorist: 'João da Silva', reporter: 'Ana Clara', reason: 'Direção perigosa e velocidade excessiva.'},
+    { id: 'rep-2', reportedMotorist: 'Samuel Wilson', reporter: 'Bruno Lima', reason: 'Veículo em más condições de higiene.'},
+];
+
 export default function AdminDashboardPage() {
   const { toast } = useToast();
   const [schedules, setSchedules] = useState(initialSchedules);
   const [users, setUsers] = useState(initialUsers);
+  const [reports, setReports] = useState(initialReports);
   const [notification, setNotification] = useState('');
   const [newRoute, setNewRoute] = useState('');
   const [newTime, setNewTime] = useState('');
@@ -57,6 +63,11 @@ export default function AdminDashboardPage() {
   const handleRemoveSchedule = (id: string) => {
     setSchedules(schedules.filter(s => s.id !== id));
     toast({ title: 'Sucesso', description: 'Horário removido.' });
+  };
+  
+  const handleDismissReport = (id: string) => {
+    setReports(reports.filter(r => r.id !== id));
+    toast({ title: 'Sucesso', description: 'Denúncia dispensada.' });
   };
 
   const handleSendNotification = () => {
@@ -158,6 +169,45 @@ export default function AdminDashboardPage() {
                 rows={5}
               />
               <Button className="w-full" onClick={handleSendNotification}>Enviar Notificação</Button>
+            </CardContent>
+          </Card>
+
+          {/* Gerenciar Denúncias */}
+          <Card className="lg:col-span-2">
+            <CardHeader>
+              <CardTitle>Denúncias de Usuários</CardTitle>
+              <CardDescription>Gerencie denúncias feitas contra motoristas.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Motorista Denunciado</TableHead>
+                    <TableHead>Motivo</TableHead>
+                    <TableHead className="text-right">Ações</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {reports.map(report => (
+                    <TableRow key={report.id}>
+                      <TableCell className="font-medium">{report.reportedMotorist}</TableCell>
+                      <TableCell className="text-muted-foreground">{report.reason}</TableCell>
+                      <TableCell className="text-right space-x-2">
+                        <Button variant="ghost" size="sm" onClick={() => handleDismissReport(report.id)}>
+                            <CheckCircle className="mr-2 h-4 w-4 text-green-500" /> Dispensar
+                        </Button>
+                        <Button variant="destructive" size="sm" onClick={() => {/* Lógica para banir baseada no nome */
+                           const userToBan = users.find(u => u.name === report.reportedMotorist);
+                           if(userToBan) handleBanUser(userToBan.id);
+                           handleDismissReport(report.id);
+                        }}>
+                          <UserX className="mr-2 h-4 w-4" /> Banir
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </CardContent>
           </Card>
 
