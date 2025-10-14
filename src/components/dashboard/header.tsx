@@ -13,7 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { Bell } from 'lucide-react';
 
 const notifications = [
@@ -33,6 +33,7 @@ const notifications = [
 
 export function DashboardHeader() {
     const router = useRouter();
+    const pathname = usePathname();
     const image = PlaceHolderImages.find(p => p.id === 'testimonial-1');
 
     const handleLogout = () => {
@@ -44,7 +45,7 @@ export function DashboardHeader() {
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center">
                 <nav className="flex items-center justify-between w-full">
-                    <Link href="/" className="mr-6 flex items-center space-x-2">
+                    <Link href={"/dashboard"} className="mr-6 flex items-center space-x-2">
                         <Logo />
                     </Link>
                     <div className="flex items-center gap-4">
