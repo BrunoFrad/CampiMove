@@ -17,7 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Label } from '@/components/ui/label';
 
-const transportOptions = [
+export const transportOptions = [
   {
     id: 'ride-1',
     motorist: 'João da Silva',
@@ -170,7 +170,7 @@ export default function FindARidePage() {
                                     <span className="font-bold">{option.rating.toFixed(1)}</span>
                                 </div>
                                 <Button size="sm" asChild>
-                                    <Link href="#">Reservar Agora</Link>
+                                    <Link href={`/chat/${option.id}`}>Reservar Agora</Link>
                                 </Button>
                             </div>
                             <DialogTrigger asChild>
