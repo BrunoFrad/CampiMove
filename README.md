@@ -82,16 +82,16 @@ O **CampiMove** tem como objetivo melhorar a mobilidade para os campi do CEFET, 
 | Sprint | Caso de Uso | Desenvolvedor                |
 |:-------|:-------------|:-----------------------------|
 |    1   |   CSU01   |  Francisco Eduardo   |
-|    3   |   CSU11   |  Gabriela Pacheco    |
+|    2   |   CSU02   |  Gabriela Pacheco    |
 |    1   |   CSU03   |  Matheus Rattes      |
 |    2   |   CSU04   |  Francisco Eduardo   |
 |    1   |   CSU05   |  Francisco Eduardo   |
 |    1   |   CSU06   |  Bruno Frade         |
 |    1   |   CSU07   |  Bruno Frade         |
-|    2   |   CSU02   |  Gabriela Pacheco    |
+|    1   |   CSU08   |  Gabriela Pacheco    |
 |    2   |   CSU09   |  Matheus Rattes      |
 |    3   |   CSU10   |  Francisco Eduardo   |
-|    1   |   CSU08   |  Gabriela Pacheco    |
+|    3   |   CSU11   |  Gabriela Pacheco    |
 |    3   |   CSU12   |  Matheus Rattes      |
 |    2   |   CSU13   |  Bruno Frade         |
 |    1   |   CSU14   |  Pedro Peixoto       |
