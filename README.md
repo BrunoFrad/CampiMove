@@ -6,7 +6,7 @@ O **CampiMove** tem como objetivo melhorar a mobilidade para os campi do CEFET, 
 |:------|:---------------------|
 | 1     | Bruno Frade          |
 | 2     | Francisco Eduardo    |
-| 3     | Grabriela Pacheco    |
+| 3     | Gabriela Pacheco    |
 | 4     | Matheus Rattes       |
 | 5     | Pedro Peixoto        |
 
