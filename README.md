@@ -42,6 +42,7 @@ O **CampiMove** tem como objetivo melhorar a mobilidade para os campi do CEFET, 
 | REQ018 | Aluno, Professor                            | Escrever comentário ao avaliar motorista ou transporte.              |
 | REQ019 | Aluno, Professor                            | Contratar transporte alternativo ao consultar.                       |
 | REQ020 | Fornecedor de transporte alternativo        | Enviar cadastro para o administrador.                                |
+| REQ021 | Fornecedor de transporte alternativo, aluno, professor | Enviar mensagens ao motorista.                            |
 
 ## Regras de Negócio
 | Id     | Nome                       | Descrição                                                                 |
@@ -75,8 +76,26 @@ O **CampiMove** tem como objetivo melhorar a mobilidade para os campi do CEFET, 
 | CSU14  | Editar perfil de usuário                 | REQ016                            | RN009                            |
 | CSU15  | Login                                    | REQ015                            | RN009, RN002, RN003, RN006       |
 | CSU16  | Recuperar senha                          | REQ015                            | RN002                            |
+| CSU17  | Mandar e receber mensagens de motoristas | REQ021                            | RN008, RN006, RN009              |
 
 ## Planejamento
 | Sprint | Caso de Uso | Desenvolvedor                |
 |:-------|:-------------|:-----------------------------|
+|    1   |   CSU01   |  Francisco Eduardo   |
+|    3   |   CSU02   |  Gabriela Pacheco    |
+|    1   |   CSU03   |  Matheus Rattes      |
+|    2   |   CSU04   |  Francisco Eduardo   |
+|    1   |   CSU05   |  Francisco Eduardo   |
+|    1   |   CSU06   |  Bruno Frade         |
+|    1   |   CSU07   |  Bruno Frade         |
+|    2   |   CSU08   |  Gabriela Pacheco    |
+|    2   |   CSU09   |  Matheus Rattes      |
+|    3   |   CSU10   |  Francisco Eduardo   |
+|    1   |   CSU11   |  Gabriela Pacheco    |
+|    3   |   CSU12   |  Matheus Rattes      |
+|    2   |   CSU13   |  Bruno Frade         |
+|    1   |   CSU14   |  Pedro Peixoto       |
+|    2   |   CSU15   |  Pedro Peixoto       |
+|    3   |   CSU16   |  Pedro Peixoto       |
+|    3   |   CSU17   |  Bruno Frade         |
 
