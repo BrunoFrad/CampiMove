@@ -1,0 +1,38 @@
+package com.campimove.backend.entities.transport;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name = "transports")
+public class Transport {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank
+    private String type;
+
+    @NotBlank
+    private String model;
+
+    @NotNull
+    private Long contact;
+
+    @NotNull
+    private boolean active;
+
+    public Transport(String type, String model, Long contact) {
+        this.type = type;
+        this.model = model;
+        this.contact = contact;
+        this.active = false;
+    }
+}
