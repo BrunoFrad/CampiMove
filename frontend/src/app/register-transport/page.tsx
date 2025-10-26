@@ -18,6 +18,7 @@ export default function RegisterTransportPage() {
   const [transportType, setTransportType] = useState('');
   const [model, setModel] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [capacity, setCapacity] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,9 +51,10 @@ export default function RegisterTransportPage() {
                         <SelectValue placeholder="Selecione um tipo" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="carpool">Carona</SelectItem>
-                        <SelectItem value="bike">Bicicleta</SelectItem>
-                        <SelectItem value="scooter">Patinete</SelectItem>
+                        <SelectItem value="Car">Carro</SelectItem>
+                        <SelectItem value="Bus">Ônibus</SelectItem>
+                        <SelectItem value="Bike">Motocicleta</SelectItem>
+                        <SelectItem value="Van">Van</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -63,6 +65,16 @@ export default function RegisterTransportPage() {
                       value={model}
                       onChange={(e) => setModel(e.target.value)}
                       placeholder="ex: Toyota Corolla"
+                      required
+                    />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="capacity">Capacidade do Veículo</Label>
+                    <Input
+                      id="capacity"
+                      value={model}
+                      onChange={(e) => setCapacity(e.target.value)}
+                      placeholder="ex: 10 pessoas"
                       required
                     />
                   </div>
