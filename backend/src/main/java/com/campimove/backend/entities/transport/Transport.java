@@ -24,15 +24,19 @@ public class Transport {
     private String model;
 
     @NotNull
-    private Long contact;
+    private Long capacity;
+
+    @NotBlank
+    private String contact;
 
     @NotNull
     private boolean active;
 
-    public Transport(String type, String model, Long contact) {
+    public Transport(String type, String model, String contact, Long capacity) {
         this.type = type;
         this.model = model;
         this.contact = contact;
+        this.capacity = capacity;
         this.active = false;
     }
 }

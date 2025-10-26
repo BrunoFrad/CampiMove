@@ -15,7 +15,7 @@ public class RegisterTransportController {
 
     @PostMapping
     public ResponseEntity<String> Register(@RequestBody RegisterTransportDTO formData){
-        repository.save(new Transport(formData.type(), formData.model(), formData.contact()));
+        repository.save(new Transport(formData.type(), formData.model(), formData.contact(), formData.capacity()));
         return ResponseEntity.status(201).body("Transport registered successfully");
     }
 }
