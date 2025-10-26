@@ -20,15 +20,45 @@ export default function RegisterTransportPage() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [capacity, setCapacity] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Implementação estática
-    console.log({ transportType, model, phoneNumber });
-    toast({
-      title: 'Transporte Cadastrado',
-      description: 'Seu veículo foi cadastrado com sucesso.',
-    });
-    router.push('/dashboard/motorist');
+
+    const transportData = {
+      transportType,
+      model,
+      capacity,
+      phoneNumber,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8080/api/register-transport', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify(transportData),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Erro ao cadastrar transporte');
+      }
+
+      toast({
+        title: 'Transporte Cadastrado',
+        description: 'Seu veículo foi cadastrado com sucesso.',
+      })
+
+      router.push('/dashboard/motorist')
+
+    } catch (error: any) {
+      toast({
+        title: 'Erro',
+        description: error.message || 'Ocorreu um erro ao cadastrar o transporte.',
+        variant: 'destructive',
+      });
+    }
+
   };
 
   return (
@@ -72,7 +102,7 @@ export default function RegisterTransportPage() {
                     <Label htmlFor="capacity">Capacidade do Veículo</Label>
                     <Input
                       id="capacity"
-                      value={model}
+                      value={capacity}
                       onChange={(e) => setCapacity(e.target.value)}
                       placeholder="ex: 10 pessoas"
                       required
