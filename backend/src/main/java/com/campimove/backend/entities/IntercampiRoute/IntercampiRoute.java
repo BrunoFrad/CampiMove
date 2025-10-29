@@ -25,17 +25,13 @@ public class IntercampiRoute {
     private Long id;
 
     @NotBlank
-    private String origin;
-
-    @NotBlank
-    private String destination;
+    private String route;
 
     @NotNull
     private LocalTime schedule;
 
-    public IntercampiRoute(String origin, String destination, LocalTime schedule) {
-        this.origin = origin;
-        this.destination = destination;
+    public IntercampiRoute(String route, LocalTime schedule) {
+        this.route = route;
         this.schedule = schedule;
     }
 
