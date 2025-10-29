@@ -3,7 +3,7 @@
 #                   Dockerfile by Bruno Frade
 #
 
-FROM node:20-alpine AS build
+FROM node:22-alpine AS build
 WORKDIR /app
 
 COPY ./package*.json ./
@@ -12,7 +12,7 @@ RUN npm install
 COPY ./ .
 RUN npm run build
 
-FROM node:20-alpine
+FROM node:22-alpine
 WORKDIR /app
 COPY --from=build /app ./
 
