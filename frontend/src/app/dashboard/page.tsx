@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DashboardHeader } from '@/components/dashboard/header';
 import { Footer } from '@/components/landing/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -19,6 +19,8 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { useToast } from '@/hooks/use-toast';
+import BusSchedule from '@/lib/interfaces/BusSchedule';
+import axios from 'axios';
 
 
 const initialRecentTravels = [
@@ -54,12 +56,19 @@ export default function DashboardPage() {
   const [rating, setRating] = useState(0);
   const [isRatingDialogOpen, setIsRatingDialogOpen] = useState(false);
   const { toast } = useToast();
+  const [schedules, setSchedules] = useState<BusSchedule[]>([]);
 
   const handleRateClick = (travel: Travel) => {
     setSelectedTravel(travel);
     setRating(0); // Resetar avaliação
     setIsRatingDialogOpen(true);
   };
+
+  useEffect(() => {
+    axios.get<BusSchedule[]>("http://localhost:8080/api/routes").then((res) => {
+      setSchedules(res.data)
+    }).catch((err: Error) => console.log("Can't GET the avaible intercampis : ", err.message));
+  }, []);
 
   const handleRatingSubmit = () => {
     if (selectedTravel && rating > 0) {
@@ -94,12 +103,16 @@ export default function DashboardPage() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-medium">Próximo Ônibus Intercampus</CardTitle>
+              <CardTitle className="text-lg font-medium">Próximo Intercampi</CardTitle>
               <Bus className="h-6 w-6 text-primary" />
             </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-bold">12:45</div>
-              <p className="text-xs text-muted-foreground">Chegando na parada do Campus Principal</p>
+            <CardContent className='flex flex-col py-4'>
+              <div className="text-4xl font-bold">{
+                schedules.length > 0 ?
+                  schedules.sort((a, b) => a.schedule.localeCompare(b.schedule)).at(0)?.schedule :
+                  "Sem Intercampis a caminho"
+              }</div>
+              <p className="py-4 text-sm text-muted-foreground">{schedules.length > 0 ? "Trajeto " + schedules.sort((a, b) => a.schedule.localeCompare(b.schedule)).at(0)?.route : ""}</p>
             </CardContent>
           </Card>
           <Card className="hover:shadow-lg transition-shadow">

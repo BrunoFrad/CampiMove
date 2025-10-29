@@ -1,6 +1,8 @@
 
 'use client';
 
+import BusSchedule from '@/lib/interfaces/BusSchedule';
+
 import { useEffect, useState } from 'react';
 import { DashboardHeader } from '@/components/dashboard/header';
 import { Footer } from '@/components/landing/footer';
@@ -14,7 +16,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
   DialogFooter,
   DialogTrigger,
   DialogClose,
@@ -23,12 +24,6 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Trash2, UserX, PlusCircle, ShieldX, CheckCircle } from 'lucide-react';
 import axios from "axios";
-
-interface BusSchedule {
-  id: number,
-  route: string,
-  schedule: string
-};
 
 const initialUsers = [
   { id: 'user-1', name: 'João da Silva', email: 'joao.silva@exemplo.com' },
