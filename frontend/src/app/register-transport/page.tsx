@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
+import axios from "axios";
 
 export default function RegisterTransportPage() {
   const { toast } = useToast();
@@ -23,42 +24,21 @@ export default function RegisterTransportPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const transportData = {
-      transportType,
-      model,
-      capacity,
-      phoneNumber,
-    };
-
-    try {
-      const response = await fetch('http://localhost:8080/api/register-transport', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-
-        body: JSON.stringify(transportData),
-      });
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Erro ao cadastrar transporte');
-      }
-
-      toast({
-        title: 'Transporte Cadastrado',
-        description: 'Seu veículo foi cadastrado com sucesso.',
-      })
-
-      router.push('/dashboard/motorist')
-
-    } catch (error: any) {
-      toast({
-        title: 'Erro',
-        description: error.message || 'Ocorreu um erro ao cadastrar o transporte.',
-        variant: 'destructive',
-      });
-    }
-
+    const response = axios.post("http://localhost:8080/api/register-transport", {
+      type: transportType,
+      model: model,
+      capacity: capacity,
+      contact: phoneNumber
+    }).then(() => {
+      toast({ title: "Sucesso", description: "Novo transporte cadastrado" });
+      
+      console.log("Transport registered: " + response);
+      router.push("/dashboard/motorist");
+      
+    }).catch((err: any) => {
+      toast({ title: 'Erro', description: 'Erro ao cadastrar novo transporte', variant: 'destructive' });
+      console.log("Can't create a new transport: ", err.message);
+    });
   };
 
   return (

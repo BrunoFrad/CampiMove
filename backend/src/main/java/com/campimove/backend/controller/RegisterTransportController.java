@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/register-transport")
-@CrossOrigin(origins = "http://localhost:9002")
 public class RegisterTransportController {
     @Autowired
     private TransportRepository repository;
