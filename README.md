@@ -67,16 +67,15 @@ O **CampiMove** tem como objetivo melhorar a mobilidade para os campi do CEFET, 
 | CSU05  | Atualizar horário de chegada do ônibus   | REQ006                            | RN002                            |
 | CSU06  | Denunciar usuários                       | REQ010                            | RN004, RN009                     |
 | CSU07  | Remover horário do ônibus                | REQ001                            | RN003                            |
-| CSU08  | Cadastrar ônibus                         | REQ009                            | RN003                            |
-| CSU09  | Notificar usuários                       | REQ012                            | RN003                            |
-| CSU10  | Avaliar transporte alternativo           | REQ011, REQ014, REQ018            | RN005, RN004                     |
-| CSU11  | Cadastrar conta por tipo de usuário      | REQ015                            | RN009, RN002, RN003, RN006       |
-| CSU12  | Banir usuários                           | REQ010                            | RN004, RN003                     |
-| CSU13  | Reservar transporte alternativo          | REQ019                            | RN009                            |
-| CSU14  | Editar perfil de usuário                 | REQ016                            | RN009                            |
-| CSU15  | Login                                    | REQ015                            | RN009, RN002, RN003, RN006       |
-| CSU16  | Recuperar senha                          | REQ015                            | RN002                            |
-| CSU17  | Mandar e receber mensagens de motoristas | REQ021                            | RN008, RN006, RN009              |
+| CSU08  | Notificar usuários                       | REQ012                            | RN003                            |
+| CSU09  | Avaliar transporte alternativo           | REQ011, REQ014, REQ018            | RN005, RN004                     |
+| CSU10  | Cadastrar conta por tipo de usuário      | REQ015                            | RN009, RN002, RN003, RN006       |
+| CSU11  | Banir usuários                           | REQ010                            | RN004, RN003                     |
+| CSU12  | Reservar transporte alternativo          | REQ019                            | RN009                            |
+| CSU13  | Editar perfil de usuário                 | REQ016                            | RN009                            |
+| CSU14  | Login                                    | REQ015                            | RN009, RN002, RN003, RN006       |
+| CSU15  | Recuperar senha                          | REQ015                            | RN002                            |
+| CSU16  | Mandar e receber mensagens de motoristas | REQ021                            | RN008, RN006, RN009              |
 
 ## Planejamento
 | Sprint | Caso de Uso | Desenvolvedor                |
@@ -84,18 +83,17 @@ O **CampiMove** tem como objetivo melhorar a mobilidade para os campi do CEFET, 
 |    1   |   CSU01   |  Francisco Eduardo   |
 |    2   |   CSU02   |  Gabriela Pacheco    |
 |    1   |   CSU03   |  Matheus Rattes      |
-|    2   |   CSU04   |  Francisco Eduardo   |
-|    1   |   CSU05   |  Bruno Frade         |
-|    1   |   CSU06   |  Bruno Frade         |
-|    3   |   CSU07   |  Gabriela Pacheco    |
-|    1   |   CSU08   |  Gabriela Pacheco    |
-|    2   |   CSU09   |  Matheus Rattes      |
-|    3   |   CSU10   |  Francisco Eduardo   |
-|    1   |   CSU11   |  Pedro Peixoto       |
-|    3   |   CSU12   |  Matheus Rattes      |
-|    2   |   CSU13   |  Bruno Frade         |
-|    3   |   CSU14   |  Pedro Peixoto       |
-|    2   |   CSU15   |  Pedro Peixoto       |
-|    3   |   CSU16   |  Pedro Peixoto       |
-|    3   |   CSU17   |  Bruno Frade         |
+|    3   |   CSU04   |  Gabriela Pacheco    |
+|    2   |   CSU05   |  Bruno Frade         |
+|    2   |   CSU06   |  Matheus Rattes      |
+|    2   |   CSU07   |  Francisco Eduardo   |
+|    3   |   CSU08   |  Matheus Rattes      |
+|    3   |   CSU09   |  Francisco Eduardo   |
+|    1   |   CSU10   |  Pedro Peixoto       |
+|    2   |   CSU11   |  Matheus Rattes      |
+|    1   |   CSU12   |  Bruno Frade         |
+|    1   |   CSU13   |  Gabriela Pacheco    |
+|    2   |   CSU14   |  Pedro Peixoto       |
+|    3   |   CSU15   |  Pedro Peixoto       |
+|    3   |   CSU16   |  Bruno Frade         |
 
